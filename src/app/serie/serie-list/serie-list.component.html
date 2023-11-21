@@ -1,0 +1,49 @@
+<header style="background-color: #24a1b4; padding: 15px 0;">
+  <nav >
+      <div class="container-fluid">
+          <img src="https://i.ytimg.com/vi/MFCWVvx3LDE/maxresdefault.jpg" width="25px" alt="logo" class="logo" style="margin-right: 10px; vertical-align: middle;">
+          <h1 class="titulo-proyecto" style="display: inline-block; font-size: larger; font-family: Arial, sans-serif; ">TV Series</h1>
+      </div>
+  </nav>
+</header>
+
+<div class="container" style="margin: 20px;">
+  <div class="row">
+      <div class="col-md-6">
+          <table class="table" id="series">
+  
+              <thead style="background-color: rgb(230, 230, 230);">
+                  <tr>
+                      <th><b>#</b></th>
+                      <th><b>Name</b></th>
+                      <th><b>Channel</b></th>
+                      <th><b>Seasons</b></th>
+                  </tr>
+              </thead> 
+
+              <tbody class="table-active">
+                <tr *ngFor="let serie of series" (click)="onSelectSerie(serie)">
+                  <td><b>{{serie.id}}</b></td>
+                  <td>
+                    <dd><a href={{serie.webpage}}>{{serie.name}}</a></dd>
+                    <style>
+                      a {
+                        text-decoration: none;
+                      }
+                      </style>
+                  </td>
+                  <td>{{serie.channel}}</td>
+                  <td>{{serie.seasons}}</td>
+                </tr>
+              </tbody>
+      
+          </table>
+          <p>Seasons Average: {{promedioTemporadas}}</p>
+        </div>
+        <div class = "col-md-6" *ngIf="selectedSerie" >
+          <app-serie-detail [serieDetail]="selectedSerie"></app-serie-detail>
+        </div>
+  </div>
+</div>
+
+

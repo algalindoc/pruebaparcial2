@@ -1,8 +1,11 @@
+//importo el modulo general serieModule y el httpclient pq si no no sirve creo
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SerieModule } from './serie/serie.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,7 +13,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SerieModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,8 @@
+.d-flex {
+    display: flex;
+  }
+  
+  #serieDetails {
+    margin-left: 20px;  /* Ajusta el margen a tu preferencia */
+  }
+  
